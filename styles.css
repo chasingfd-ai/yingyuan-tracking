@@ -1,0 +1,73 @@
+:root {
+  color-scheme: light;
+  font-family: "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+  color: #24211f;
+  background: #f7f2eb;
+  --ink: #24211f;
+  --muted: #756d65;
+  --paper: rgba(255, 253, 249, 0.9);
+  --line: #dfd4c7;
+  --accent: #ce503f;
+  --accent-dark: #a9372d;
+  --green: #2f7250;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(232, 162, 101, .24), transparent 28rem),
+    radial-gradient(circle at 85% 90%, rgba(84, 125, 105, .14), transparent 28rem),
+    #f7f2eb;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .26;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+}
+
+.shell { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 72px 0 48px; position: relative; }
+.hero { border-top: 2px solid var(--ink); padding-top: 20px; }
+.eyebrow { font-size: 12px; letter-spacing: .2em; font-weight: 700; color: var(--accent-dark); }
+h1 { margin: 20px 0 12px; font-family: Georgia, "Noto Serif SC", serif; font-size: clamp(44px, 10vw, 74px); line-height: .98; letter-spacing: -.05em; }
+.intro { margin: 0 0 32px; color: var(--muted); font-size: 16px; line-height: 1.7; }
+.lookup-card, .parcel, .notice, .status-note { background: var(--paper); border: 1px solid var(--line); box-shadow: 0 18px 50px rgba(72, 54, 39, .08); }
+.lookup-card { padding: 24px; }
+label { display: block; margin-bottom: 10px; font-weight: 700; }
+.input-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+input { width: 100%; min-width: 0; border: 1px solid #bcae9f; border-radius: 4px; background: #fff; color: var(--ink); padding: 14px 15px; font: inherit; font-size: 17px; outline: none; }
+input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(206, 80, 63, .15); }
+button { border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer; }
+.input-row button { background: var(--ink); color: white; padding: 0 22px; transition: transform .15s, background .15s; }
+.input-row button:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.help { margin: 12px 0 0; color: var(--muted); font-size: 13px; }
+.result { margin-top: 22px; }
+.result-heading { margin: 0 0 12px; font-size: 18px; }
+.parcel { padding: 20px; margin-bottom: 12px; }
+.parcel-top, .tracking-line { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.carrier { font-weight: 800; }
+.status { color: var(--green); font-size: 13px; font-weight: 700; }
+.tracking-line { margin-top: 16px; }
+.tracking { font-family: ui-monospace, Consolas, monospace; font-size: clamp(18px, 5vw, 25px); letter-spacing: .02em; overflow-wrap: anywhere; }
+.copy { flex: 0 0 auto; padding: 8px 11px; background: #eee5dc; color: var(--ink); }
+.item { margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); }
+.empty { background: #fff8ed; border: 1px solid #e7cda9; padding: 18px; line-height: 1.7; }
+.notice { margin-top: 28px; padding: 18px 20px; display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; box-shadow: none; }
+.notice-mark { background: #e9ddd0; padding: 5px 8px; font-size: 12px; font-weight: 800; }
+.notice p { margin: 1px 0 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.status-note { margin-top: 12px; padding: 18px 20px; box-shadow: none; }
+.status-label { display: block; color: var(--accent-dark); font-size: 12px; font-weight: 800; letter-spacing: .08em; }
+.status-note p { margin: 8px 0 0; color: var(--ink); font-size: 14px; line-height: 1.7; }
+
+@media (max-width: 560px) {
+  .shell { padding-top: 42px; }
+  .input-row { grid-template-columns: 1fr; }
+  .input-row button { min-height: 48px; }
+  .lookup-card { padding: 18px; }
+  .notice { grid-template-columns: 1fr; gap: 8px; }
+}
+
