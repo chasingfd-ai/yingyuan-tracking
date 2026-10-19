@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f2eb" />
+    <meta name="description" content="输入下单手机号，查询夹克、保温杯和CHIC杂志物流单号。" />
+    <title>应援周边物流查询</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="eyebrow">柏欣妤1103出道九周年快乐</div>
+        <h1 id="page-title">应援周边物流查询</h1>
+        <p class="intro">输入下单时填写的完整手机号，查询夹克、保温杯和CHIC杂志物流单号。</p>
+
+        <form id="lookup-form" class="lookup-card">
+          <label for="phone">收件手机号</label>
+          <div class="input-row">
+            <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="请输入完整手机号" aria-describedby="phone-help" required />
+            <button type="submit">查询物流</button>
+          </div>
+          <p id="phone-help" class="help">支持大陆及转运仓订单；仅用于本次应援周边物流查询。</p>
+        </form>
+      </section>
+
+      <section id="result" class="result" aria-live="polite" hidden></section>
+
+      <aside class="notice">
+        <span class="notice-mark">隐私说明</span>
+        <p>页面不保存你输入的内容；查询名单不含明文手机号、姓名或地址。</p>
+      </aside>
+      <aside class="status-note">
+        <span class="status-label">制作进度</span>
+        <p>拉链外套、棒球帽、金属配饰制作中，完成后近期更新到查询结果。</p>
+      </aside>
+    </main>
+
+    <template id="parcel-template">
+      <article class="parcel">
+        <div class="parcel-top"><span class="carrier"></span><span class="status">已发货</span></div>
+        <div class="tracking-line"><span class="tracking"></span><button class="copy" type="button">复制单号</button></div>
+        <p class="item"></p>
+      </article>
+    </template>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
+
